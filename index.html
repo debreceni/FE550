@@ -86,13 +86,25 @@
 		alert(err);
 		return;
 	  }
-	  var ul = document.createElement('ul');
-	  for (var i = 0, len = results.length; i < len; i++) {
-		var li = document.createElement('li');
-		li.textContent = results[i].Rank + ' ' + results[i].Name;
-		ul.appendChild(li);
-	  }
-	  document.body.appendChild(ul);
+	  
+	 
 	});
+	
+
+
+    
 	</script>
+	
+	<h1>Chess Champions of the World</h1>
+	
+	<p>  Being an avid chess player I thought this data set was pretty interesting.  It is a small set from July 2012 to April 2017.  I found this on kaggle - https://www.kaggle.com/odartey/top-100-chess-players-july-2012-april-2016. <br> Here is my analysis</p>
+	
+	<h3>Research Questions</h3>
+	<ol>
+		<li>Is there a particular country that seems to generate more champions?
+		<li>Are there any disparities in Age between lowest ranked players and highest ranked players?
+		<li>How many games do the top ranked players typically play?
+	</ol>
+	
+	
 	
