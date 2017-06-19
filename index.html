@@ -110,7 +110,7 @@ var svg = d3.select("body").append("svg")
 		return;
 	  }
 		x.domain(results.map(function(d) { return d.Country; }));
-		y.domain([0, d3.max(results, function(d) { return d.Rank; })]
+		y.domain([0, d3.max(results, function(d) { return d.Rank; })]);
 	});
 	
 	svg.append("g")
