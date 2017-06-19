@@ -1,0 +1,103 @@
+Rank,Name,Title,Country,Rating,Games,B-Year
+1,Carlsen Magnus,g,NOR,2861,8,1990
+2,Kramnik Vladimir,g,RUS,2810,8,1975
+3,Aronian Levon,g,ARM,2802,8,1982
+4,Radjabov Teimour,g,AZE,2793,0,1987
+5,Caruana Fabiano,g,ITA,2781,11,1992
+6,Karjakin Sergey,g,RUS,2780,11,1990
+7,Anand Viswanathan,g,IND,2772,8,1969
+8,Topalov Veselin,g,BUL,2771,0,1975
+9,Nakamura Hikaru,g,USA,2769,8,1987
+10,Mamedyarov Shakhriyar,g,AZE,2766,11,1985
+11,Grischuk Alexander,g,RUS,2764,0,1983
+12,Morozevich Alexander,g,RUS,2758,11,1977
+13,Ivanchuk Vassily,g,UKR,2758,4,1969
+14,Wang Hao,g,CHN,2752,13,1989
+15,Svidler Peter,g,RUS,2747,11,1976
+16,Gelfand Boris,g,ISR,2740,11,1968
+17,Kamsky Gata,g,USA,2740,11,1974
+18,Gashimov Vugar,g,AZE,2737,0,1986
+19,Leko Peter,g,HUN,2735,11,1979
+20,Jakovenko Dmitry,g,RUS,2734,10,1983
+21,Ponomariov Ruslan,g,UKR,2733,11,1983
+22,Andreikin Dmitry,g,RUS,2727,6,1990
+23,Giri Anish,g,NED,2726,7,1994
+24,Adams Michael,g,ENG,2725,8,1971
+25,Dominguez Perez Leinier,g,CUB,2723,11,1983
+26,Wojtaszek Radoslaw,g,POL,2723,11,1987
+27,Tomashevsky Evgeny,g,RUS,2722,4,1987
+28,Volokitin Andrei,g,UKR,2722,4,1986
+29,Areshchenko Alexander,g,UKR,2720,0,1986
+30,Vachier-Lagrave Maxime,g,FRA,2713,4,1990
+31,Navara David,g,CZE,2710,0,1985
+32,Kasimdzhanov Rustam,g,UZB,2709,11,1979
+33,Ding Liren,g,CHN,2709,4,1992
+34,Malakhov Vladimir,g,RUS,2709,4,1980
+35,Cheparinov Ivan,g,BUL,2709,0,1986
+36,Naiditsch Arkadij,g,GER,2708,0,1985
+37,Shirov Alexei,g,LAT,2708,0,1972
+38,Fressinet Laurent,g,FRA,2706,4,1981
+39,Le Quang Liem,g,VIE,2705,0,1991
+40,Riazantsev Alexander,g,RUS,2705,0,1985
+41,Akopian Vladimir,g,ARM,2704,0,1971
+42,Nepomniachtchi Ian,g,RUS,2703,6,1990
+43,Moiseenko Alexander,g,UKR,2703,4,1980
+44,Bacrot Etienne,g,FRA,2703,0,1983
+45,Berkes Ferenc,g,HUN,2702,9,1985
+46,Wang Yue,g,CHN,2702,5,1987
+47,Jobava Baadur,g,GEO,2702,4,1983
+48,Bruzon Batista Lazaro,g,CUB,2701,9,1982
+49,McShane Luke J,g,ENG,2698,8,1984
+50,Harikrishna P.,g,IND,2698,0,1986
+51,Polgar Judit,g,HUN,2696,8,1976
+52,Efimenko Zahar,g,UKR,2696,0,1985
+53,Vallejo Pons Francisco,g,ESP,2694,0,1982
+54,Vitiugov Nikita,g,RUS,2694,0,1987
+55,Alekseev Evgeny,g,RUS,2691,0,1985
+56,Korobov Anton,g,UKR,2690,11,1985
+57,Short Nigel D,g,ENG,2690,4,1965
+58,Almasi Zoltan,g,HUN,2689,0,1976
+59,Inarkiev Ernesto,g,RUS,2688,6,1985
+60,Yu Yangyi,g,CHN,2688,4,1994
+61,Grachev Boris,g,RUS,2688,0,1986
+62,Movsesian Sergei,g,ARM,2688,0,1978
+63,Rublevsky Sergei,g,RUS,2688,0,1974
+64,Edouard Romain,g,FRA,2686,4,1990
+65,Sutovsky Emil,g,ISR,2684,0,1977
+66,So Wesley,g,PHI,2682,0,1993
+67,Bologan Viktor,g,MDA,2681,0,1971
+68,Van Wely Loek,g,NED,2679,1,1972
+69,Eljanov Pavel,g,UKR,2678,4,1983
+70,Nisipeanu Liviu-Dieter,g,ROU,2677,0,1976
+71,Motylev Alexander,g,RUS,2676,3,1979
+72,Sasikiran Krishnan,g,IND,2676,0,1981
+73,Bu Xiangzhi,g,CHN,2675,4,1985
+74,Li Chao b,g,CHN,2674,4,1989
+75,Gyimesi Zoltan,g,HUN,2674,0,1977
+76,Laznicka Viktor,g,CZE,2674,0,1988
+77,Sokolov Ivan,g,NED,2667,8,1968
+78,Fridman Daniel,g,GER,2667,0,1976
+79,Kryvoruchko Yuriy,g,UKR,2666,4,1986
+80,Sargissian Gabriel,g,ARM,2666,0,1983
+81,Gareev Timur,g,USA,2665,2,1988
+82,Potkin Vladimir,g,RUS,2665,0,1982
+83,Gharamian Tigran,g,FRA,2661,0,1984
+84,Onischuk Alexander,g,USA,2660,0,1975
+85,Khenkin Igor,g,GER,2659,0,1968
+86,Zvjaginsev Vadim,g,RUS,2658,0,1976
+87,Tiviakov Sergei,g,NED,2657,29,1973
+88,Melkumyan Hrant,g,ARM,2656,9,1989
+89,Nielsen Peter Heine,g,DEN,2656,0,1973
+90,Ragger Markus,g,AUT,2655,0,1988
+91,Dreev Aleksey,g,RUS,2654,0,1969
+92,Istratescu Andrei,g,FRA,2654,0,1975
+93,Matlakov Maxim,g,RUS,2653,9,1991
+94,Khismatullin Denis,g,RUS,2652,17,1984
+95,Filippov Anton,g,UZB,2652,0,1986
+96,Kobalia Mikhail,g,RUS,2652,0,1978
+97,Smirin Ilia,g,ISR,2652,0,1968
+98,Mamedov Rauf,g,AZE,2651,16,1988
+99,Zhigalko Sergei,g,BLR,2651,13,1989
+100,Khairullin Ildar,g,RUS,2650,12,1990
+101,Iturrizaga Eduardo,g,VEN,2650,0,1989
+102,Tkachiev Vladislav,g,FRA,2650,0,1973

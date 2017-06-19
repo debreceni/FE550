@@ -1,0 +1,101 @@
+Rank,Name,Title,Country,Rating,Games,B-Year
+1,Carlsen Magnus,g,NOR,2862,0,1990
+2,Caruana Fabiano,g,ITA,2820,5,1992
+3,Grischuk Alexander,g,RUS,2810,0,1983
+4,Topalov Veselin,g,BUL,2800,0,1975
+5,Anand Viswanathan,g,IND,2797,5,1969
+6,Aronian Levon,g,ARM,2797,0,1982
+7,Giri Anish,g,NED,2784,14,1994
+8,Kramnik Vladimir,g,RUS,2783,14,1975
+9,Nakamura Hikaru,g,USA,2776,5,1987
+10,So Wesley,g,USA,2762,0,1993
+11,Karjakin Sergey,g,RUS,2760,9,1990
+12,Mamedyarov Shakhriyar,g,AZE,2759,9,1985
+13,Vachier-Lagrave Maxime,g,FRA,2757,9,1990
+14,Gelfand Boris,g,ISR,2747,2,1968
+15,Wojtaszek Radoslaw,g,POL,2744,0,1987
+16,Svidler Peter,g,RUS,2739,9,1976
+17,Adams Michael,g,ENG,2738,5,1971
+18,Andreikin Dmitry,g,RUS,2737,0,1990
+19,Vitiugov Nikita,g,RUS,2735,9,1987
+20,Radjabov Teimour,g,AZE,2734,0,1987
+21,Jakovenko Dmitry,g,RUS,2733,9,1983
+22,Ding Liren,g,CHN,2732,16,1992
+23,Navara David,g,CZE,2729,4,1985
+24,Li Chao b,g,CHN,2728,11,1989
+25,Eljanov Pavel,g,UKR,2727,9,1983
+26,Jobava Baadur,g,GEO,2727,9,1983
+27,Wang Yue,g,CHN,2726,7,1987
+28,Dominguez Perez Leinier,g,CUB,2726,0,1983
+29,Yu Yangyi,g,CHN,2724,15,1994
+30,Harikrishna P.,g,IND,2723,9,1986
+31,Tomashevsky Evgeny,g,RUS,2716,9,1987
+32,Rapport Richard,g,HUN,2716,0,1996
+33,Ivanchuk Vassily,g,UKR,2715,0,1969
+34,Nepomniachtchi Ian,g,RUS,2714,9,1990
+35,Wang Hao,g,CHN,2713,7,1989
+36,Leko Peter,g,HUN,2713,4,1979
+37,Ponomariov Ruslan,g,UKR,2713,0,1983
+38,Morozevich Alexander,g,RUS,2711,13,1977
+39,Bacrot Etienne,g,FRA,2711,2,1983
+40,Malakhov Vladimir,g,RUS,2706,7,1980
+41,Vallejo Pons Francisco,g,ESP,2706,2,1982
+42,Fressinet Laurent,g,FRA,2706,0,1981
+43,Kasimdzhanov Rustam,g,UZB,2705,2,1979
+44,Almasi Zoltan,g,HUN,2701,3,1976
+45,Lysyj Igor,g,RUS,2700,9,1987
+46,Rublevsky Sergei,g,RUS,2698,0,1974
+47,Moiseenko Alexander,g,UKR,2695,11,1980
+48,Matlakov Maxim,g,RUS,2695,0,1991
+49,Naiditsch Arkadij,g,GER,2694,14,1985
+50,Kryvoruchko Yuriy,g,UKR,2692,18,1986
+51,Ni Hua,g,CHN,2689,7,1983
+52,Shirov Alexei,g,LAT,2689,7,1972
+53,Korobov Anton,g,UKR,2687,0,1985
+54,Bruzon Batista Lazaro,g,CUB,2685,18,1982
+55,Bu Xiangzhi,g,CHN,2684,16,1985
+56,Riazantsev Alexander,g,RUS,2684,0,1985
+57,Sasikiran Krishnan,g,IND,2682,0,1981
+58,Cheparinov Ivan,g,BUL,2681,9,1986
+59,Zhigalko Sergei,g,BLR,2681,9,1989
+60,Rodshtein Maxim,g,ISR,2680,2,1989
+61,Alekseev Evgeny,g,RUS,2679,0,1985
+62,Sjugirov Sanan,g,RUS,2678,9,1993
+63,Le Quang Liem,g,VIE,2678,0,1991
+64,Kamsky Gata,g,USA,2676,6,1974
+65,Wei Yi,g,CHN,2675,7,1999
+66,Inarkiev Ernesto,g,RUS,2675,2,1985
+67,Polgar Judit,g,HUN,2675,0,1976
+68,Khismatullin Denis,g,RUS,2673,9,1984
+69,Melkumyan Hrant,g,ARM,2673,9,1989
+70,Hou Yifan,g,CHN,2673,0,1994
+71,McShane Luke J,g,ENG,2672,0,1984
+72,Jones Gawain C B,g,ENG,2671,6,1987
+73,Grachev Boris,g,RUS,2670,9,1986
+74,Laznicka Viktor,g,CZE,2670,6,1988
+75,Howell David W L,g,ENG,2670,0,1990
+76,Tiviakov Sergei,g,NED,2669,16,1973
+77,Negi Parimarjan,g,IND,2669,0,1993
+78,Sargissian Gabriel,g,ARM,2668,9,1983
+79,Fedoseev Vladimir,g,RUS,2668,4,1995
+80,Kuzubov Yuriy,g,UKR,2667,18,1990
+81,Van Wely Loek,g,NED,2667,1,1972
+82,Saric Ivan,g,CRO,2666,12,1990
+83,Motylev Alexander,g,RUS,2665,7,1979
+84,Onischuk Alexander,g,USA,2665,0,1975
+85,Berkes Ferenc,g,HUN,2664,10,1985
+86,Movsesian Sergei,g,ARM,2663,11,1978
+87,Petrosian Tigran L.,g,ARM,2663,9,1984
+88,Areshchenko Alexander,g,UKR,2661,9,1986
+89,Akopian Vladimir,g,ARM,2660,9,1971
+90,Short Nigel D,g,ENG,2660,8,1965
+91,Balogh Csaba,g,HUN,2659,8,1987
+92,Artemiev Vladislav,g,RUS,2659,4,1998
+93,Nguyen Ngoc Truong Son,g,VIE,2659,0,1990
+94,Zvjaginsev Vadim,g,RUS,2658,9,1976
+95,Sadler Matthew D,g,ENG,2658,0,1974
+96,Efimenko Zahar,g,UKR,2654,11,1985
+97,Bauer Christian,g,FRA,2654,5,1977
+98,Nisipeanu Liviu-Dieter,g,GER,2654,2,1976
+99,Nielsen Peter Heine,g,DEN,2654,0,1973
+100,Kovalenko Igor,g,LAT,2653,0,1988
