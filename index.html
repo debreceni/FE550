@@ -85,14 +85,14 @@
 		
 	
 	   
-	multiCsv(infiles, function (err, results) {
+	var data = multiCsv(infiles, function (err, results) {
 	  if (err) {
 		alert(err);
 		return;
 	  }
 		
 		
-
+	return results;
 });
 	
 	</script>
@@ -108,5 +108,18 @@
 		<li>How many games do the top ranked players typically play?
 	</ol>
 	
-	
+	<div id="cntbycountry">
+ 
+  <script type="text/javascript">
+    var svg = dimple.newSvg("#cntbycountry", 590, 400);
+    
+      var myChart = new dimple.chart(svg, data);
+      myChart.setBounds(75, 30, 480, 330)
+      myChart.addMeasureAxis("x", "Country");
+      myChart.addCategoryAxis("y", "Name");
+     
+      myChart.addSeries(null, dimple.plot.bar);
+      myChart.draw();
+     </script>
+</div>
 	
