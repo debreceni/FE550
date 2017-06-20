@@ -107,7 +107,7 @@
 		return;
 	  }
 		
-	var data = _.uniq(_.map(results, function(i){ return _.pick(i,"Name","Country");}));	
+	var data = _.chain(results).map(function(i){ return _.pick(i,"Name","Country");}).uniq().value();	
 	var svg = dimple.newSvg("#cntbycountry", 590, 400);
     
       var myChart = new dimple.chart(svg, data);
