@@ -14,9 +14,10 @@
 		<li>How many games do the top ranked players typically play?
 	</ol>
 	
+	<p>When breaking down the players over the last 45 months you can clearly see that Russia has more players than any other country<br>
 	<div id="cntbycountry">
  
-	</div>
+	</div></p>
 	
 	<script src="/underscore/underscore-min.js"></script>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
@@ -112,6 +113,7 @@
 		.map(function(g){ return g[0];})
 		.countBy(function(g) { return g.Country;})
 		.map(function(value,key){return {Country:key,Cnt:value};})
+		.sortBy("Country")
 		.value();	
 	var svg = dimple.newSvg("#cntbycountry", 700, 500);
     
