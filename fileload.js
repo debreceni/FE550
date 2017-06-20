@@ -1,7 +1,7 @@
 
 	var data = [];
 
-	(function () {
+	
 	function multiCsv(files, callback) {
 	  var results = [];
 	  var error = "";
@@ -87,4 +87,3 @@
 	data = results;
 });
 	
-	});
