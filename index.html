@@ -95,7 +95,15 @@
 		
 	return results;
 });
-	
+	var svg = dimple.newSvg("#cntbycountry", 590, 400);
+    
+      var myChart = new dimple.chart(svg, data);
+      myChart.setBounds(75, 30, 480, 330)
+      myChart.addMeasureAxis("x", "Country");
+      myChart.addCategoryAxis("y", "Name");
+     
+      myChart.addSeries(null, dimple.plot.bar);
+      myChart.draw();
 	</script>
 	
 	<h1>Chess Champions of the World</h1>
@@ -111,16 +119,5 @@
 	
 	<div id="cntbycountry">
  
-  <script type="text/javascript">
-    var svg = dimple.newSvg("#cntbycountry", 590, 400);
-    
-      var myChart = new dimple.chart(svg, data);
-      myChart.setBounds(75, 30, 480, 330)
-      myChart.addMeasureAxis("x", "Country");
-      myChart.addCategoryAxis("y", "Name");
-     
-      myChart.addSeries(null, dimple.plot.bar);
-      myChart.draw();
-     </script>
 </div>
 	
