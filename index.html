@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <head>
+	<script src="/underscore/underscore-min.js"></script>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="/dimple/dist/dimple.v2.3.0.min.js"></script>
+	<script src="/FE550/fileload.js"></script>
 	
 </head>
 <body>
@@ -16,117 +20,16 @@
 	
 	<p>When breaking down the players over the last 45 months you can clearly see that Russia has more players than any other country<br>
 	<div id="cntbycountry">
- 
-	</div></p>
-	
-<p>Looking at the number of players in the top 10 over the last 45 months
-	<div id="cntbyrank">
- 
-	</div></p>
-	<script src="/underscore/underscore-min.js"></script>
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="/dimple/dist/dimple.v2.3.0.min.js"></script>
-	
-	<script>
-	
-	function multiCsv(files, callback) {
-	  var results = [];
-	  var error = "";
-	  var filesLength = (files || []).length;
-	  var callbackInvoked = false;
-	  for (var i = 0; i < filesLength; i++) {
-		(function(url) {
-		  d3.csv(url, function(data) {
-			if (data === null) {
-			  error += "Error retrieving \"" + url + "\"\n";
-			} else {
-			  results.push(data);
-			}
-			// all files retrieved or an error occurred
-			if (!callbackInvoked && (error || results.length === filesLength)) {
-			  if (error) {
-				callback(error, null); // might want to send partial results here
-			  } else {
-				callback(null, d3.merge(results));
-			  }
-			  callbackInvoked = true;
-			}
-		  });
-		})(files[i]);
-	  }
-	}
-	var infiles = [
-		"/FE550/chess_top_100/fide.table.217.csv",
-		"/FE550/chess_top_100/fide.table.221.csv",
-		"/FE550/chess_top_100/fide.table.225.csv",
-		"/FE550/chess_top_100/fide.table.229.csv",
-		"/FE550/chess_top_100/fide.table.233.csv",
-		"/FE550/chess_top_100/fide.table.237.csv",
-		"/FE550/chess_top_100/fide.table.241.csv",
-		"/FE550/chess_top_100/fide.table.245.csv",
-		"/FE550/chess_top_100/fide.table.249.csv",
-		"/FE550/chess_top_100/fide.table.253.csv",
-		"/FE550/chess_top_100/fide.table.257.csv",
-		"/FE550/chess_top_100/fide.table.261.csv",
-		"/FE550/chess_top_100/fide.table.265.csv",
-		"/FE550/chess_top_100/fide.table.269.csv",
-		"/FE550/chess_top_100/fide.table.273.csv",
-		"/FE550/chess_top_100/fide.table.277.csv",
-		"/FE550/chess_top_100/fide.table.281.csv",
-		"/FE550/chess_top_100/fide.table.285.csv",
-		"/FE550/chess_top_100/fide.table.289.csv",
-		"/FE550/chess_top_100/fide.table.293.csv",
-		"/FE550/chess_top_100/fide.table.297.csv",
-		"/FE550/chess_top_100/fide.table.301.csv",
-		"/FE550/chess_top_100/fide.table.305.csv",
-		"/FE550/chess_top_100/fide.table.309.csv",
-		"/FE550/chess_top_100/fide.table.313.csv",
-		"/FE550/chess_top_100/fide.table.317.csv",
-		"/FE550/chess_top_100/fide.table.321.csv",
-		"/FE550/chess_top_100/fide.table.325.csv",
-		"/FE550/chess_top_100/fide.table.329.csv",
-		"/FE550/chess_top_100/fide.table.333.csv",
-		"/FE550/chess_top_100/fide.table.337.csv",
-		"/FE550/chess_top_100/fide.table.341.csv",
-		"/FE550/chess_top_100/fide.table.345.csv",
-		"/FE550/chess_top_100/fide.table.349.csv",
-		"/FE550/chess_top_100/fide.table.353.csv",
-		"/FE550/chess_top_100/fide.table.357.csv",
-		"/FE550/chess_top_100/fide.table.361.csv",
-		"/FE550/chess_top_100/fide.table.365.csv",
-		"/FE550/chess_top_100/fide.table.369.csv",
-		"/FE550/chess_top_100/fide.table.373.csv",
-		"/FE550/chess_top_100/fide.table.377.csv",
-		"/FE550/chess_top_100/fide.table.381.csv",
-		"/FE550/chess_top_100/fide.table.385.csv",
-		"/FE550/chess_top_100/fide.table.389.csv",
-		"/FE550/chess_top_100/fide.table.393.csv",
-		"/FE550/chess_top_100/fide.table.397.csv"]
-		
-		
-	
-	   
-	multiCsv(infiles, function (err, results) {
-	  if (err) {
-		alert(err);
-		return;
-	  }
-	var Rdata = _.chain(results).map(function(i){ return _.pick(i,"Country", "Rank");})
-		.groupBy(function(g){ return g.Rank + "#" + g.Country})
-		.map(function(g){ return g[0]})
-		.countBy(function(g) { return g.Country;})
-		.map(function(value,key){return {Country:key,Cnt:value};})
-		.value();	
-		
-	var data = _.chain(results).map(function(i){ return _.pick(i,"Name","Country", "Rank");})
+ <script>
+	var cdata = _.chain(results).map(function(i){ return _.pick(i,"Name","Country");})
 		.groupBy(function(g){ return g.Name + "#" + g.Country})
 		.map(function(g){ return g[0]})
 		.countBy(function(g) { return g.Country;})
 		.map(function(value,key){return {Country:key,Cnt:value};})
-		.value();	
+		.value();
 	var svg = dimple.newSvg("#cntbycountry", 700, 500);
     
-      var myChart = new dimple.chart(svg, data);
+      var myChart = new dimple.chart(svg, cdata);
       
       myChart.addMeasureAxis("x", "Cnt");
      var y = myChart.addCategoryAxis("y", "Country");
@@ -134,6 +37,19 @@
       myChart.addSeries(null, dimple.plot.bar);
       myChart.draw();
 		
+	
+	 </script>
+	</div></p>
+	
+<p>Looking at the number of players in the top 10 over the last 45 months<br>
+	<div id="cntbyrank">
+ <script>
+ var Rdata = _.chain(results).map(function(i){ return _.pick(i,"Country", "Rank");})
+		.groupBy(function(g){ return g.Rank + "#" + g.Country})
+		.map(function(g){ return g[0]})
+		.countBy(function(g) { return g.Country;})
+		.map(function(value,key){return {Country:key,Cnt:value};})
+		.value();	
 	var svgR = dimple.newSvg("#cntbyrank", 700, 500);
     
       var myChartR = new dimple.chart(svgR, Rdata);
@@ -142,10 +58,15 @@
      var yR = myChart.addCategoryAxis("y", "Country");
      	yR.addOrderRule("Country");
       myChartR.addSeries(null, dimple.plot.bar);
-      myChartR.draw();	
-});
+      myChartR.draw();		
 	
 	</script>
+	</div></p>
+	
+	
+	
+		
+	
 	
 	
 	
