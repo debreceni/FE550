@@ -46,7 +46,8 @@
 		x.title = "Count of Unique Players"
      var y = myChart.addCategoryAxis("y", "Country");
      	y.addOrderRule("Country");
-      myChart.addSeries(Rdata, dimple.plot.bar);
+      myChart.addSeries("Rank", dimple.plot.bar);
+	  myChart.addLegend(60,10,510,20,"right");
       myChart.draw();
 		}
 	
