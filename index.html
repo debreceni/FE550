@@ -35,11 +35,13 @@
 		.countBy(function(g) { return g.Country;})
 		.map(function(value,key){return {Country:key,Cnt:value};})
 		.value();
+		
+		cdata = _.union(cdata,Rdata)
 	var svg = dimple.newSvg("#cntbycountry", 700, 500);
     
       var myChart = new dimple.chart(svg, cdata);
       
-     var x =  myChart.addMeasureAxis("x", "Cnt");
+     var x =  myChart.addMeasureAxis("x", ["Cnt", "Rank");
 		x.title = "Count of Unique Players"
      var y = myChart.addCategoryAxis("y", "Country");
      	y.addOrderRule("Country");
