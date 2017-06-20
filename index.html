@@ -36,7 +36,7 @@
 		.map(function(value,key){return {Country:key,Rank:value};})
 		.value();
 		
-		cdata = _.union(cdata,Rdata).groupBy(function(g) { return g.Country;});
+		cdata = _.chain(cdata).union(Rdata).groupBy(function(g) { return g.Country;}).value();
 	var svg = dimple.newSvg("#cntbycountry", 700, 500);
     
       var myChart = new dimple.chart(svg, cdata);
