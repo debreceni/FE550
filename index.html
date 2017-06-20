@@ -111,7 +111,7 @@
 		.groupBy(function(g){ return g.Name + "#" + g.Country})
 		.map(function(g){ return g[0];})
 		.countBy(function(g) { return g.Country;})
-		
+		.map(function(value,key){return {Country:key,Cnt:value};})
 		.value();	
 	var svg = dimple.newSvg("#cntbycountry", 590, 400);
     
