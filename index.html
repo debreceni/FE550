@@ -110,7 +110,7 @@
 	var data = _.chain(results).map(function(i){ return _.pick(i,"Name","Country");})
 		.groupBy(function(g){ return g.Name + "#" + g.Country})
 		.map(function(g){ return g[0];})
-		.groupBy(function(g) { return g.Country;})
+		.countBy(function(g) { return g.Country;})
 		
 		.value();	
 	var svg = dimple.newSvg("#cntbycountry", 590, 400);
