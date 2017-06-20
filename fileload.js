@@ -1,5 +1,5 @@
 
-	var data = [];
+	
 
 	
 	function multiCsv(files, callback) {
@@ -84,6 +84,8 @@
 		alert(err);
 		return;
 	  }
-	data = results;
+	
+	cntrChart(results);
+	rankChart(results);
 });
 	

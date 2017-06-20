@@ -21,6 +21,7 @@
 	<p>When breaking down the players over the last 45 months you can clearly see that Russia has more players than any other country<br>
 	<div id="cntbycountry">
  <script>
+	function cntrChart(data) {
 	var cdata = _.chain(data).map(function(i){ return _.pick(i,"Name","Country");})
 		.groupBy(function(g){ return g.Name + "#" + g.Country})
 		.map(function(g){ return g[0]})
@@ -36,7 +37,7 @@
      	y.addOrderRule("Country");
       myChart.addSeries(null, dimple.plot.bar);
       myChart.draw();
-		
+		}
 	
 	 </script>
 	</div></p>
@@ -44,7 +45,8 @@
 <p>Looking at the number of players in the top 10 over the last 45 months<br>
 	<div id="cntbyrank">
  <script>
- var Rdata = _.chain(data).map(function(i){ return _.pick(i,"Country", "Rank");})
+ function rankChart(data) {
+	var Rdata = _.chain(data).map(function(i){ return _.pick(i,"Country", "Rank");})
 		.groupBy(function(g){ return g.Rank + "#" + g.Country})
 		.map(function(g){ return g[0]})
 		.countBy(function(g) { return g.Country;})
@@ -59,7 +61,7 @@
      	yR.addOrderRule("Country");
       myChartR.addSeries(null, dimple.plot.bar);
       myChartR.draw();		
-	
+	}
 	</script>
 	</div></p>
 	
