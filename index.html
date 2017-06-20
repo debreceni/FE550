@@ -101,15 +101,13 @@
 		
 	
 	   
-	var data = multiCsv(infiles, function (err, results) {
+	multiCsv(infiles, function (err, results) {
 	  if (err) {
 		alert(err);
 		return;
 	  }
 		
-		
-	return results;
-});
+	var data = results["Name","Country"];	
 	var svg = dimple.newSvg("#cntbycountry", 590, 400);
     
       var myChart = new dimple.chart(svg, data);
@@ -119,6 +117,8 @@
      
       myChart.addSeries(null, dimple.plot.bar);
       myChart.draw();
+});
+	
 	</script>
 	
 	
