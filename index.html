@@ -28,14 +28,22 @@
 		.countBy(function(g) { return g.Country;})
 		.map(function(value,key){return {Country:key,Cnt:value};})
 		.value();
+		
+		var Rdata = _.chain(data).map(function(i){ return _.pick(i,"Country", "Rank");})
+		.groupBy(function(g){ return g.Rank + "#" + g.Country})
+		.map(function(g){ return g[0]})
+		.countBy(function(g) { return g.Country;})
+		.map(function(value,key){return {Country:key,Cnt:value};})
+		.value();
 	var svg = dimple.newSvg("#cntbycountry", 700, 500);
     
       var myChart = new dimple.chart(svg, cdata);
       
-      myChart.addMeasureAxis("x", "Cnt");
+     var x =  myChart.addMeasureAxis("x", "Cnt");
+		x.title = "Count of Unique Players"
      var y = myChart.addCategoryAxis("y", "Country");
      	y.addOrderRule("Country");
-      myChart.addSeries(null, dimple.plot.bar);
+      myChart.addSeries(Rdata, dimple.plot.bar);
       myChart.draw();
 		}
 	
