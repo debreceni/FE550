@@ -57,7 +57,7 @@
       var myChartR = new dimple.chart(svgR, Rdata);
       
       myChartR.addMeasureAxis("x", "Cnt");
-     var yR = myChart.addCategoryAxis("y", "Country");
+     var yR = myChartR.addCategoryAxis("y", "Country");
      	yR.addOrderRule("Country");
       myChartR.addSeries(null, dimple.plot.bar);
       myChartR.draw();		
