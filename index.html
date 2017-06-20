@@ -33,7 +33,7 @@
 		.groupBy(function(g){ return g.Rank + "#" + g.Country})
 		.map(function(g){ return g[0]})
 		.countBy(function(g) { return g.Country;})
-		.map(function(value,key){return {Country:key,Cnt:value};})
+		.map(function(value,key){return {Country:key,Rank:value};})
 		.value();
 		
 		cdata = _.union(cdata,Rdata)
@@ -41,7 +41,7 @@
     
       var myChart = new dimple.chart(svg, cdata);
       
-     var x =  myChart.addMeasureAxis("x", ["Cnt", "Rank");
+     var x =  myChart.addMeasureAxis("x", ["Cnt", "Rank"]);
 		x.title = "Count of Unique Players"
      var y = myChart.addCategoryAxis("y", "Country");
      	y.addOrderRule("Country");
