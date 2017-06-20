@@ -111,6 +111,7 @@
 	var data = _.chain(results).map(function(i){ return _.pick(i,"Name","Country", "Rank");})
 		.groupBy(function(g){ return g.Name + "#" + g.Country})
 		.map(function(g){ return {Country:g[0].Country, Name:g[0].Name,TopTen:_.countBy(g,function(R){ return R.Rank<=10;}).true};})
+		.countBy(function(g) { return g.Country;})
 		
 		.value();	
 	var svg = dimple.newSvg("#cntbycountry", 700, 500);
