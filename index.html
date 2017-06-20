@@ -113,10 +113,10 @@
 		.countBy(function(g) { return g.Country;})
 		.map(function(value,key){return {Country:key,Cnt:value};})
 		.value();	
-	var svg = dimple.newSvg("#cntbycountry", 590, 400);
+	var svg = dimple.newSvg("#cntbycountry", 700, 500);
     
       var myChart = new dimple.chart(svg, data);
-      myChart.setBounds(75, 30, 480, 330)
+      
       myChart.addMeasureAxis("x", "Cnt");
       myChart.addCategoryAxis("y", "Country");
      
