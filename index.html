@@ -108,7 +108,7 @@
 		return;
 	  }
 		
-	var data = _.chain(results).map(function(i){ return _.pick(i,"Name","Country");})
+	var data = _.chain(results).map(function(i){ return _.pick(i,"Name","Country", "Rank");})
 		.groupBy(function(g){ return g.Name + "#" + g.Country})
 		.map(function(g){ return g[0];})
 		.countBy(function(g) { return g.Country;})
@@ -121,7 +121,7 @@
       
       myChart.addMeasureAxis("x", "Cnt");
       myChart.addCategoryAxis("y", "Country");
-     
+     	myChart.addOrderRule("Country");
       myChart.addSeries(null, dimple.plot.bar);
       myChart.draw();
 });
