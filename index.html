@@ -112,16 +112,15 @@
 		.groupBy(function(g){ return g.Name + "#" + g.Country})
 		.map(function(g){ return g[0];})
 		.countBy(function(g) { return g.Country;})
-		.map(function(value,key){return {Country:key,Cnt:value};})
-		.sortBy("Country")
+		
 		.value();	
 	var svg = dimple.newSvg("#cntbycountry", 700, 500);
     
       var myChart = new dimple.chart(svg, data);
       
       myChart.addMeasureAxis("x", "Cnt");
-      myChart.addCategoryAxis("y", "Country");
-     	myChart.addOrderRule("Country");
+     var y = myChart.addCategoryAxis("y", "Country");
+     	y.addOrderRule("Country");
       myChart.addSeries(null, dimple.plot.bar);
       myChart.draw();
 });
