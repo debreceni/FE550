@@ -139,8 +139,52 @@ theory.  Players that are younger simply have not played as many games as more s
     	
 	}
 	</script>
-	</div></p>
+	</div><br>
+Looking at the above graph it appears that most grand masters have very similar average ratings regardless of age.  
+And the masters with scores in the top 10% are spread across the list of birth years.  So since we have clearly shown, Age is not a determining factor</p>
+
+	<h3>So What about games played? </h3>
+
 		
+<p>Since we have shown that age is not a determining factor in making a grandmaster, experience in games played must have some impact.
+	Below I have graphed the Rating of a player vs the number of games they have played.
+<div id="rnkbyage">
+ <script>
+ function rankbygames(data) {
+	var Rdata = _.chain(data)
+		.map(function(i){ return _.pick(i,"Name", "Rating", "Games");})
+		.groupBy(function(g){ return g.Name + "#"+ g["BYear"]})
+		.map(function(g){ return { Name: g[0].Name, Games: g[0].Games, RANK: (_.reduce(  g,
+  							(memo, num) => memo + Number(num.Rating), 0
+							) / g.length) }})
+		.value();
+	 var minrank = _.reduce(Rdata, function(prev, curr) {
+    		return prev.RANK < curr.RANK ? prev : curr;
+		});
+	 var maxrank = _.reduce(Rdata, function(prev, curr) {
+    		return prev.RANK > curr.RANK ? prev : curr;
+		});
+	 var svg = dimple.newSvg("#rnkbyage", 700, 500);
+	 var myChart = new dimple.chart(svg, Rdata);
+        myChart.setBounds(60, 30, 505, 305)
+        var x = myChart.addCategoryAxis("x", "Games");
+        x.addOrderRule("Date");
+        var y = myChart.addMeasureAxis("y", "RANK");
+	 y.overrideMin = Math.floor(minrank.RANK/100)*100;
+	 y.overrideMax = Math.ceil(maxrank.RANK/100)*100;
+	 y.tickFormat = ","
+	 y.title= "Rating"
+        myChart.addSeries(null, dimple.plot.bar);
+        myChart.draw();
+	
+    	
+	}
+	</script>
+	</div><br>
+Looking at the above graph it appears that most grand masters have very similar average ratings regardless of age.  
+And the masters with scores in the top 10% are spread across the list of birth years.  So since we have clearly shown, Age is not a determining factor</p>
+
+			
 	
 	
 	
