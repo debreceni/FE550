@@ -85,10 +85,10 @@
 	var svgR = dimple.newSvg("#cntbyrank", 700, 500);
     
       var myChartR = new dimple.chart(svgR, cdata);
-	 var formatPercent = d3.format(".0%");
+	 
       
      var x =   myChartR.addMeasureAxis("x", "pctchmp");
-	 x.tickFormat(formatPercent);
+	 x.tickFormat = "%";
      var yR = myChartR.addCategoryAxis("y", "Country");
      	yR.addOrderRule("Country");
       myChartR.addSeries(null, dimple.plot.bar);
