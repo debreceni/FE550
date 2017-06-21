@@ -75,8 +75,9 @@
 		.map(function(value,key){return {Country:key,Cnt:value, Type: 'Players'};})
 		.value();
 	 
-	var cdata = _.chain(Rdata).union(pdata).groupBy(function(g) { return g.Country;});
-		//.map(function(m) { return{ Country:m[0].Country, pctchmp:(m[0].Cnt/m[1].Cnt)};}).value();
+	var cdata = _.chain(Rdata).union(pdata).groupBy(function(g) { return g.Country;})
+		.map(function(m) { return{ Country:m[0].Country, pctchmp:(m[0].Cnt / m[1].Cnt)};})
+		.value();
 	var svgR = dimple.newSvg("#cntbyrank", 700, 500);
     
       var myChartR = new dimple.chart(svgR, Rdata);
