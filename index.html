@@ -99,8 +99,39 @@
 	</script>
 	</div></p>
 	
-	
-	
+<p>It is clear from the above chart that  Italy has produced better chess players, however they have only had 2 players that were ranked in the 
+	last 45 months.  So given the size of this sample I am not sure that this may be a fair assessment of the overall Chess world.  It would be
+	interesting to run this same sample for multiple years.</p>
+<h3>Now on to the next challenge - Does Age Matter?</h3>
+
+		
+<p>It is often thought that a game like Chess is better played by the older and wiser player.  Experience playing a large part in this
+theory.  Players that are younger simply have not played as many games as more senior players.  However I am not sure that this is true.
+<div id="rnkbyage">
+ <script>
+ function rankbybyear(data) {
+	var Rdata = _.chain(data)
+		.map(function(i){ return _.pick(i,"Name", "Rank", "B-Year");})
+		.groupBy(function(g){ return g.Name + "#" + g.B-Year})
+		.map(function(g){ return { BYEAR: g[0].B-Year, RANK: _.reduce( g,
+  							(memo, num) => memo + num, 0
+							) / g.length || 1})};})
+		.value();
+	 
+	var svgR = dimple.newSvg("#rnkbyage", 700, 500);
+    
+      var myChartR = new dimple.chart(svgR, cdata);
+	 
+      
+     var x =   myChartR.addMeasureAxis("x", "RANK");
+	 x.tickFormat = "0.0%";
+     var yR = myChartR.addCategoryAxis("y", "BYEAR");
+     	yR.addOrderRule("BYEAR");
+      myChartR.addSeries(null, dimple.plot.line);
+      myChartR.draw();		
+	}
+	</script>
+	</div></p>
 		
 	
 	
