@@ -118,17 +118,17 @@ theory.  Players that are younger simply have not played as many games as more s
 							) / g.length || 1)}})
 		.value();
 	 
-	var svgR = dimple.newSvg("#rnkbyage", 700, 500);
-    
-      var myChartR = new dimple.chart(svgR, cdata);
-	 
-      
-     var x =   myChartR.addMeasureAxis("x", "RANK");
-	 x.tickFormat = "0.0%";
-     var yR = myChartR.addCategoryAxis("y", "BYEAR");
-     	yR.addOrderRule("BYEAR");
-      myChartR.addSeries(null, dimple.plot.bubble);
-      myChartR.draw();		
+	 var svg = dimple.newSvg("#rnkbyage", 700, 500);
+	 var myChart = new dimple.chart(svg, Rdata);
+        myChart.setBounds(60, 30, 505, 305)
+        var x = myChart.addCategoryAxis("x", "BYEAR");
+        x.addOrderRule("Date");
+        myChart.addMeasureAxis("y", "Rank");
+        myChart.addSeries(null, dimple.plot.bubble);
+        myChart.addLegend(180, 10, 360, 20, "right");
+        myChart.draw();
+	
+    	
 	}
 	</script>
 	</div></p>
