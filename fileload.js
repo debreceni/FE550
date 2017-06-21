@@ -88,8 +88,8 @@
 		var resultsnew = _.map(results, function(e) { return {BYear:e["B-Year"], Country:e.Country, Name: e.Name.replace(/\,/g,""),
 							       Rank: e.Rank, Rating:e.Rating}});
 		
-	cntrChart(results);
-	rankChart(results);
-	rankbybyear(results);
+	cntrChart(resultsnew);
+	rankChart(resultsnew);
+	rankbybyear(resultsnew);
 });
 	
