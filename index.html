@@ -43,7 +43,7 @@
       
      var x =  myChart.addMeasureAxis("x", "Cnt");
 		x.title = "Counts"
-     var y = myChart.addCategoryAxis("y", "Country");
+     var y = myChart.addCategoryAxis("y", ["Country", "Type"]);
      	y.addOrderRule("Country");
       myChart.addSeries("Type", dimple.plot.bar);
 	  myChart.addLegend(60,10,510,20,"right");
