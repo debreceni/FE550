@@ -26,27 +26,26 @@
 		.groupBy(function(g){ return g.Name + "#" + g.Country})
 		.map(function(g){ return g[0]})
 		.countBy(function(g) { return g.Country;})
-		.map(function(value,key){return {Country:key,Cnt:value};})
+		.map(function(value,key){return {Country:key,Cnt:value, Type: 'Players'};})
 		.value();
 		
 		var Rdata = _.chain(data).map(function(i){ return _.pick(i,"Country", "Rank");})
 		.groupBy(function(g){ return g.Rank + "#" + g.Country})
 		.map(function(g){ return g[0]})
 		.countBy(function(g) { return g.Country;})
-		.map(function(value,key){return {Country:key,Rank:value};})
+		.map(function(value,key){return {Country:key,Cnt:value, Type:'Rank'};})
 		.value();
 		
-		cdata = _.chain(cdata).union(Rdata).groupBy(function(g) { return g.Country;})
-			.map(function(g){ return {Country:g[0].Country, Cnt:g[0].Cnt, Rank:g[1].Rank }}).value();
+		cdata = _.union(cdata, Rdata);
 	var svg = dimple.newSvg("#cntbycountry", 700, 500);
     
       var myChart = new dimple.chart(svg, cdata);
       
-     var x =  myChart.addMeasureAxis("x", ["Cnt", "Rank"]);
-		x.title = "Count of Unique Players"
+     var x =  myChart.addMeasureAxis("x", "Cnt");
+		x.title = "Counts"
      var y = myChart.addCategoryAxis("y", "Country");
      	y.addOrderRule("Country");
-      myChart.addSeries("Rank", dimple.plot.bar);
+      myChart.addSeries("Type", dimple.plot.bar);
 	  myChart.addLegend(60,10,510,20,"right");
       myChart.draw();
 		}
