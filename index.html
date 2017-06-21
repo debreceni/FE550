@@ -131,7 +131,7 @@ theory.  Players that are younger simply have not played as many games as more s
         var y = myChart.addMeasureAxis("y", "RANK");
 	 y.overrideMin = Math.floor(minrank.RANK/100)*100;
 	 y.overrideMax = Math.ceil(maxrank.RANK/100)*100;
-	 y.tickFormat = "0,000"
+	 y.tickFormat = ","
 	 y.title= "Rating"
         myChart.addSeries("Name", dimple.plot.bubble);
         myChart.draw();
