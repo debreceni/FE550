@@ -85,7 +85,8 @@
 		return;
 	  }
 	//data cleaning  Remove comma from name when present
-		results = _.each(results, function(e) { return e});
+		results = _.each(results, function(e) { return {BYear:e["B-Year"], Country:e.Country, Name: e.Name.replace(/\,/g,""),
+							       Rank: e.Rank, Rating:e.Rating}});
 		
 	cntrChart(results);
 	rankChart(results);
