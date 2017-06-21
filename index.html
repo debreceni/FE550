@@ -123,7 +123,7 @@ theory.  Players that are younger simply have not played as many games as more s
         myChart.setBounds(60, 30, 505, 305)
         var x = myChart.addCategoryAxis("x", "BYEAR");
         x.addOrderRule("Date");
-        myChart.addMeasureAxis("y", "Rank");
+        myChart.addMeasureAxis("y", "RANK");
         myChart.addSeries(null, dimple.plot.bubble);
         myChart.addLegend(180, 10, 360, 20, "right");
         myChart.draw();
