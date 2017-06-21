@@ -113,7 +113,7 @@ theory.  Players that are younger simply have not played as many games as more s
 	var Rdata = _.chain(data)
 		.map(function(i){ return _.pick(i,"Name", "Rating", "BYear");})
 		.groupBy(function(g){ return g.Name + "#"+ g["BYear"]})
-		.map(function(g){ return { BYEAR: g[0]["BYear"], RANK: (_.reduce(  g,
+		.map(function(g){ return { Name: g[0].Name, BYEAR: g[0]["BYear"], RANK: (_.reduce(  g,
   							(memo, num) => memo + Number(num.Rating), 0
 							) / g.length) }})
 		.value();
@@ -124,7 +124,7 @@ theory.  Players that are younger simply have not played as many games as more s
         var x = myChart.addCategoryAxis("x", "BYEAR");
         x.addOrderRule("Date");
         myChart.addMeasureAxis("y", "RANK");
-        myChart.addSeries(null, dimple.plot.bubble);
+        myChart.addSeries("Name", dimple.plot.bubble);
         myChart.addLegend(180, 10, 360, 20, "right");
         myChart.draw();
 	
