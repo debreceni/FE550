@@ -75,7 +75,7 @@
 		.map(function(value,key){return {Country:key,Cnt:value, Type: 'Players'};})
 		.value();
 	 
-	var cdata = _.chain(pdata).filter(function (f) { return _.contains(Rdata.Country, f.Country)=== true })
+	var cdata = _.chain(pdata).filter(function (f) { return _.contains(Rdata.Country, f.Country) })
 		//.union(Rdata).groupBy(function(g) { return g.Country;})
 		//.map(function(m) { return{ Country:m[0].Country, pctchmp:(m[0].Cnt / m[1].Cnt)};})
 		.value();
