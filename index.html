@@ -111,8 +111,8 @@ theory.  Players that are younger simply have not played as many games as more s
  <script>
  function rankbybyear(data) {
 	var Rdata = _.chain(data)
-		.map(function(i){ return _.pick(i,"Name", "Rating", "B-Year");})
-		.groupBy(function(g){ return g.Name + "#"+ g["B-Year"]})
+		.map(function(i){ return _.pick(i,"Name", "Rating", "BYear");})
+		.groupBy(function(g){ return g.Name + "#"+ g["BYear"]})
 	//	.map(function(g){ return { BYEAR: g[0]["B-Year"], RANK: (_.reduce(  _.each(g, function(c) { return c.Rating;}),
   	//						(memo, num) => memo + num, 0
 	//						) / g.length || 1)}})
