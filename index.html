@@ -20,7 +20,8 @@
 	
 	<p>When breaking down the players over the last 45 months you can clearly see that Russia has more players than any other country.  This chart looks at 2 types of numbers,
 		Players (Unique by country) and Top 10 Rank (total count by contry).  Logically one would think the country that is putting out the most
-		players should have the most players in the top 10.  Count wise this appears to not be true as you can see below.<br>
+		players should have the most players in the top 10.  Count wise this appears to not be true as you can see below.
+		<br>
 	<div id="cntbycountry">
  <script>
 	function cntrChart(data) {
@@ -56,17 +57,18 @@
 	 </script>
 	</div></p>
 	
-<p>So lets take a look at this a bit futher.  To me the best way to normalize this is to conver this to a percentage.  Lets look at countries
-	that have a top 10 presence in the last 45 months vs how many players the country has ranked.<br>
+<p>But the above data can be a little misleading since we are looking at Unique players and then Sheer number of top 10 places for a 
+	country.  So lets take a look at this a bit futher.  To me the best way to normalize this is to conver this to a percentage.  Lets look at countries
+	that have a unique players with a top 10 presence in the last 45 months vs how many unique players the country has ranked.<br>
 	<div id="cntbyrank">
  <script>
  function rankChart(data) {
 	var Rdata = _.chain(data).filter(function(f) { return f.Rank<= 10;})
-		.map(function(i){ return _.pick(i,"Country", "Rank");})
-		.groupBy(function(g){ return g.Rank + "#" + g.Country})
+		.map(function(i){ return _.pick(i,"Country", "Name");})
+		.groupBy(function(g){ return g.Name + "#" + g.Country})
 		.map(function(g){ return g[0]})
 		.countBy(function(g) { return g.Country;})
-		.map(function(value,key){return {Country:key,Cnt:value, Type:'Rank'};})
+		.map(function(value,key){return {Country:key,Cnt:value};})
 		.value();
 	 var cntry ={};
 	 _.each(Rdata, function(c) { return cntry[c.Country] = true;})
@@ -75,7 +77,7 @@
 		.groupBy(function(g){ return g.Name + "#" + g.Country})
 		.map(function(g){ return g[0]})
 		.countBy(function(g) { return g.Country;})
-		.map(function(value,key){return {Country:key,Cnt:value, Type: 'Players'};})
+		.map(function(value,key){return {Country:key,Cnt:value};})
 		.value();
 	 
 	var cdata = _.chain(pdata)
