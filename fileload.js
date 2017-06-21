@@ -86,10 +86,11 @@
 	  }
 	//data cleaning  Remove comma from name when present
 		var resultsnew = _.map(results, function(e) { return {BYear:e["B-Year"], Country:e.Country, Name: e.Name.replace(/\,/g,""),
-							       Rank: e.Rank, Rating:e.Rating}});
+							       Rank: e.Rank, Rating:e.Rating, Games:e.Games}});
 		
 	cntrChart(resultsnew);
 	rankChart(resultsnew);
 	rankbybyear(resultsnew);
+		rankbygames(resultsnew);
 });
 	
