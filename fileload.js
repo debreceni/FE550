@@ -84,7 +84,9 @@
 		alert(err);
 		return;
 	  }
-	
+	//data cleaning  Remove comma from name when present
+		results = _.each(results, function(e) { return e});
+		
 	cntrChart(results);
 	rankChart(results);
 	rankbybyear(results);
