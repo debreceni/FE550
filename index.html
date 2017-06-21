@@ -115,7 +115,7 @@ theory.  Players that are younger simply have not played as many games as more s
 		.groupBy(function(g){ return g.Name + "#" + g.B-Year})
 		.map(function(g){ return { BYEAR: g[0].B-Year, RANK: (_.reduce( g,
   							(memo, num) => memo + num, 0
-							) / g.length || 1)}};)
+							) / g.length || 1)}})
 		.value();
 	 
 	var svgR = dimple.newSvg("#rnkbyage", 700, 500);
