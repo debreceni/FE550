@@ -87,5 +87,6 @@
 	
 	cntrChart(results);
 	rankChart(results);
+	rankbybyear(results);
 });
 	
