@@ -18,7 +18,9 @@
 		<li>How many games do the top ranked players typically play?
 	</ol>
 	
-	<p>When breaking down the players over the last 45 months you can clearly see that Russia has more players than any other country<br>
+	<p>When breaking down the players over the last 45 months you can clearly see that Russia has more players than any other country.  This chart looks at 2 types of numbers,
+		Players (Unique by country) and Top 10 Rank (total count by contry).  Logically one would think the country that is putting out the most
+		players should have the most players in the top 10.  Count wise this appears to not be true as you can see below.<br>
 	<div id="cntbycountry">
  <script>
 	function cntrChart(data) {
@@ -54,16 +56,27 @@
 	 </script>
 	</div></p>
 	
-<p>Looking at the number of players in the top 10 over the last 45 months<br>
+<p>So lets take a look at this a bit futher.  To me the best way to normalize this is to conver this to a percentage.  Lets look at countries
+	that have a top 10 presence in the last 45 months vs how many players the country has ranked.<br>
 	<div id="cntbyrank">
  <script>
  function rankChart(data) {
-	var Rdata = _.chain(data).map(function(i){ return _.pick(i,"Country", "Rank");})
+	var Rdata = _.chain(data).filter(function(f) { return f.Rank<= 10;})
+		.map(function(i){ return _.pick(i,"Country", "Rank");})
 		.groupBy(function(g){ return g.Rank + "#" + g.Country})
 		.map(function(g){ return g[0]})
 		.countBy(function(g) { return g.Country;})
-		.map(function(value,key){return {Country:key,Cnt:value};})
-		.value();	
+		.map(function(value,key){return {Country:key,Cnt:value, Type:'Rank'};})
+		.value();
+	 var pdata = _.chain(data).map(function(i){ return _.pick(i,"Name","Country");})
+		.groupBy(function(g){ return g.Name + "#" + g.Country})
+		.map(function(g){ return g[0]})
+		.countBy(function(g) { return g.Country;})
+		.map(function(value,key){return {Country:key,Cnt:value, Type: 'Players'};})
+		.value();
+	 
+	var cdata = _.chain(Rdata).union(pdata).groupBy(function(g) { return g.Country;})
+		.map(function(m) { return{ Country:m[0].Country, pctchmp:(m[0].Cnt/m[1].Cnt};}).value();
 	var svgR = dimple.newSvg("#cntbyrank", 700, 500);
     
       var myChartR = new dimple.chart(svgR, Rdata);
