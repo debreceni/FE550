@@ -68,7 +68,9 @@
 		.countBy(function(g) { return g.Country;})
 		.map(function(value,key){return {Country:key,Cnt:value, Type:'Rank'};})
 		.value();
-	 var pdata = _.chain(data).filter(function(f) { return f.Rank<= 10;})
+	 var cntry {};
+	 _.each(Rdata, function(c) { return cntry[Rdata.Country] = true;})
+	 var pdata = _.chain(data).filter(function(f) { return cntry[f.Country];})
 	 	.map(function(i){ return _.pick(i,"Name","Country");})
 		.groupBy(function(g){ return g.Name + "#" + g.Country})
 		.map(function(g){ return g[0]})
