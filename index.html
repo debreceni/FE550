@@ -167,9 +167,9 @@ And the masters with scores in the top 10% are spread across the list of birth y
 	 var svg = dimple.newSvg("#rnkbyage", 700, 500);
 	 var myChart = new dimple.chart(svg, Rdata);
         myChart.setBounds(60, 30, 505, 305)
-        var x = myChart.addCategoryAxis("x", "Games");
-        x.addOrderRule("Date");
-        var y = myChart.addMeasureAxis("y", "RANK");
+        var x = myChart.addCategoryAxis("y", "Games");
+        x.addOrderRule("Number");
+        var y = myChart.addMeasureAxis("x", "RANK");
 	 y.overrideMin = Math.floor(minrank.RANK/100)*100;
 	 y.overrideMax = Math.ceil(maxrank.RANK/100)*100;
 	 y.tickFormat = ","
