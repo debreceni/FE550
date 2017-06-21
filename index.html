@@ -29,7 +29,8 @@
 		.map(function(value,key){return {Country:key,Cnt:value, Type: 'Players'};})
 		.value();
 		
-		var Rdata = _.chain(data).map(function(i){ return _.pick(i,"Country", "Rank");})
+		var Rdata = _.chain(data).filter(function(f) { return f.Rank<= 10;})
+		.map(function(i){ return _.pick(i,"Country", "Rank");})
 		.groupBy(function(g){ return g.Rank + "#" + g.Country})
 		.map(function(g){ return g[0]})
 		.countBy(function(g) { return g.Country;})
