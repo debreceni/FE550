@@ -117,7 +117,9 @@ theory.  Players that are younger simply have not played as many games as more s
   							(memo, num) => memo + Number(num.Rating), 0
 							) / g.length) }})
 		.value();
-	 var frdata = _.flatten(Rdata)
+	 var frdata = Rdata.reduce(function(prev, curr) {
+    		return prev.Rank < curr.Rank ? prev : curr;
+		});
 	 var svg = dimple.newSvg("#rnkbyage", 700, 500);
 	 var myChart = new dimple.chart(svg, Rdata);
         myChart.setBounds(60, 30, 505, 305)
