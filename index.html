@@ -148,7 +148,7 @@ And the masters with scores in the top 10% are spread across the list of birth y
 		
 <p>Since we have shown that age is not a determining factor in making a grandmaster, experience in games played must have some impact.
 	Below I have graphed the Rating of a player vs the number of games they have played.
-<div id="rnkbyage">
+<div id="rnkbygames">
  <script>
  function rankbygames(data) {
 	var Rdata = _.chain(data)
@@ -164,7 +164,7 @@ And the masters with scores in the top 10% are spread across the list of birth y
 	 var maxrank = _.reduce(Rdata, function(prev, curr) {
     		return prev.RANK > curr.RANK ? prev : curr;
 		});
-	 var svg = dimple.newSvg("#rnkbyage", 700, 500);
+	 var svg = dimple.newSvg("#rnkbygames", 700, 500);
 	 var myChart = new dimple.chart(svg, Rdata);
         myChart.setBounds(60, 30, 505, 305)
         var x = myChart.addCategoryAxis("y", "Games");
