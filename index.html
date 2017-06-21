@@ -68,15 +68,16 @@
 		.countBy(function(g) { return g.Country;})
 		.map(function(value,key){return {Country:key,Cnt:value, Type:'Rank'};})
 		.value();
-	 var pdata = _.chain(data).map(function(i){ return _.pick(i,"Name","Country");})
+	 var pdata = _.chain(data).filter(function(f) { return f.Rank<= 10;})
+	 	.map(function(i){ return _.pick(i,"Name","Country");})
 		.groupBy(function(g){ return g.Name + "#" + g.Country})
 		.map(function(g){ return g[0]})
 		.countBy(function(g) { return g.Country;})
 		.map(function(value,key){return {Country:key,Cnt:value, Type: 'Players'};})
 		.value();
 	 
-	var cdata = _.chain(pdata).filter(function (f) { return _.contains(Rdata, function(c){ return c.Country===f.Country;}) })
-		//.union(Rdata).groupBy(function(g) { return g.Country;})
+	var cdata = _.chain(pdata)
+		.union(Rdata).groupBy(function(g) { return g.Country;})
 		//.map(function(m) { return{ Country:m[0].Country, pctchmp:(m[0].Cnt / m[1].Cnt)};})
 		.value();
 	var svgR = dimple.newSvg("#cntbyrank", 700, 500);
